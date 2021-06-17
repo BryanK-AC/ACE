@@ -1,0 +1,12 @@
+# **** copy/paste one at a time
+
+# Novus AC
+sudo iptables -t nat -A PREROUTING -p udp -i eth0 --dport 9000 -j DNAT --to-destination 10.6.10.11
+sudo iptables -t nat -A PREROUTING -p udp -i eth0 --dport 9001 -j DNAT --to-destination 10.6.10.11
+
+# Novus Test AC
+sudo iptables -t nat -A PREROUTING -p udp -i eth0 --dport 9002 -j DNAT --to-destination 10.6.10.12
+sudo iptables -t nat -A PREROUTING -p udp -i eth0 --dport 9003 -j DNAT --to-destination 10.6.10.12
+
+sudo iptables ! -o lo -t nat -A POSTROUTING -j MASQUERADE
+# sudo iptables -t nat -A POSTROUTING -j MASQUERADE

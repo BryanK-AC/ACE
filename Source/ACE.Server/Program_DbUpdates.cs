@@ -19,6 +19,7 @@ namespace ACE.Server
         private static void CheckForWorldDatabaseUpdate()
         {
             log.Info($"Automatic World Database Update started...");
+            Console.WriteLine($"Connecting to SQL server at {ConfigManager.Config.MySql.World.Host}:{ConfigManager.Config.MySql.World.Port} .... ");
             try
             {
                 var worldDb = new Database.WorldDatabase();

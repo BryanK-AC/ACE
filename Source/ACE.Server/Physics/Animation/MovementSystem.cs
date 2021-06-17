@@ -29,9 +29,9 @@ namespace ACE.Server.Physics.Animation
 
         public static int JumpStaminaCost(float power, float burden, bool pk)
         {
-            if (pk)
-                return (int)((power + 1.0f) * 100.0f);
-            else
+            // if (pk)
+            //     return (int)((power + 1.0f) * 100.0f);
+            // else
                 return (int)Math.Ceiling((burden + 0.5f) * power * 8.0f + 2.0f);
         }
 
